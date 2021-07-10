@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-import 'home.dart';
+import 'app/home.dart';
 
 const home = '/home';
 

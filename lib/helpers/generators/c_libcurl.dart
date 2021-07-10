@@ -14,7 +14,7 @@ class CLibcurlCodegen {
   String? rawParams = "";
   String? rawRequestBody = "";
   String? bearerToken;
-  dynamic headers;
+  Map<String, dynamic>? headers;
   dynamic contentType;
   CLibcurlCodegen({
     this.url,
@@ -33,7 +33,7 @@ class CLibcurlCodegen {
   });
 
   String generator() {
-    var requestString = [];
+    final requestString = [];
 
     requestString.add('CURL *hnd = curl_easy_init();');
     requestString
@@ -42,13 +42,12 @@ class CLibcurlCodegen {
         'curl_easy_setopt(hnd, CURLOPT_URL, "$url$pathName$queryString");');
     requestString.add('struct curl_slist *headers = NULL;');
 
-    if (headers != null) {
-      headers.forEach(({key, value}) => {
-            if (key)
-              requestString
-                  .add('headers = curl_slist_append(headers, "$key: $value");')
-          });
-    }
+    headers!.forEach((key, value) => {
+          // ignore: unnecessary_null_comparison
+          if (key != null)
+            requestString
+                .add('headers = curl_slist_append(headers, "$key: $value");')
+        });
 
     if (auth == "Basic Auth") {
       final unescape = HtmlUnescape();

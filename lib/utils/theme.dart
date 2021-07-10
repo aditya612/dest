@@ -30,6 +30,7 @@ class AppTheme {
     return ThemeData(
       colorScheme: randomColorSchemeLight(),
       textTheme: _textTheme,
+      visualDensity: VisualDensity.adaptivePlatformDensity,
     );
   }
 
@@ -37,6 +38,7 @@ class AppTheme {
     return ThemeData(
       colorScheme: randomColorSchemeDark(),
       textTheme: _textTheme,
+      visualDensity: VisualDensity.adaptivePlatformDensity,
     );
   }
 
@@ -47,8 +49,9 @@ class AppTheme {
   static final Color _darkFocusColor = Colors.white.withOpacity(0.12);
 
   static ThemeData lightThemeData =
-      _themeData(lightColorScheme, _lightFocusColor);
-  static ThemeData darkThemeData = _themeData(darkColorScheme, _darkFocusColor);
+      _themeData(_lightColorScheme, _lightFocusColor);
+  static ThemeData darkThemeData =
+      _themeData(_darkColorScheme, _darkFocusColor);
 
   static ThemeData _themeData(ColorScheme colorScheme, Color focusColor) {
     return ThemeData(
@@ -79,8 +82,8 @@ class AppTheme {
     );
   }
 
-  static final ColorScheme lightColorScheme = randomColorSchemeLight();
-  static final ColorScheme darkColorScheme = randomColorSchemeDark();
+  static final ColorScheme _lightColorScheme = randomColorSchemeLight();
+  static final ColorScheme _darkColorScheme = randomColorSchemeDark();
 
   static const _regular = FontWeight.w400;
   static const _medium = FontWeight.w500;

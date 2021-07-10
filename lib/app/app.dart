@@ -1,5 +1,5 @@
-import 'package:dest/routes.dart';
-import 'package:dest/utils/theme.dart';
+import '../routes.dart';
+import '../utils/theme.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -8,9 +8,10 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       routeInformationParser: vxInformationParser,
       routerDelegate: navigator,
-      theme: AppTheme.light,
+      theme: AppTheme.darkThemeData,
       themeMode: ThemeMode.dark,
     );
   }
