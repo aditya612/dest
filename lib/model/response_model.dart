@@ -17,5 +17,7 @@ class ResponseModel {
 
   String? get statusMessage => response.statusMessage;
 
-  dynamic contentSize() => response.data.length / 1024;
+  dynamic get size => response.data.length;
+
+  dynamic get contentSize => response.data.length / 1024;
 }

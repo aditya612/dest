@@ -300,8 +300,8 @@ class DefaultSplitter extends StatelessWidget {
 
   // static const double iconSize = 24.0;
   // static const double splitterWidth = 12.0;
-  static const double iconSize = 12.0;
-  static const double splitterWidth = 6.0;
+  static const double iconSize = 22.0;
+  static const double splitterWidth = 11.0;
 
   final isHorizontal;
 

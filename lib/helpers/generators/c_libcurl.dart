@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:core';
+
 import 'package:html_unescape/html_unescape.dart';
 
 class CLibcurlCodegen {

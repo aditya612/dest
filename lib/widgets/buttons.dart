@@ -1,3 +1,5 @@
+import 'dart:ui';
+// import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import 'focusable_control_builder.dart';
@@ -54,6 +56,9 @@ class FocusableIconButton extends StatelessWidget {
       onPressed: onPressed,
       builder: (_, control) {
         Color basecolor = _color(context, control);
+        // final double scale = MediaQuery.maybeOf(context)?.textScaleFactor ?? 1;
+        // final double gap =
+        //     scale <= 1 ? 8 : lerpDouble(8, 4, math.min(scale - 1, 1))!;
         // Color outlineColor =
         //     control.isFocused ? Colors.black : Colors.transparent;
         // Color bgColor =
@@ -67,12 +72,14 @@ class FocusableIconButton extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(label),
+              // SizedBox(width: gap),
               Icon(icon, size: 16, color: color),
             ],
           ),
           decoration: BoxDecoration(
             color: basecolor,
             border: Border.all(color: basecolor, width: 1),
+
             // borderRadius: BorderRadius.circular(2),
           ),
         );
@@ -87,12 +94,14 @@ Color _color(BuildContext context, FocusableControlState control) {
   print('baseColor: $background');
   if (control.isFocused) {
     // baseColor = Color.alphaBlend(Colors.black.withOpacity(0.25), baseColor);
-    background = Color.alphaBlend(foreground.withOpacity(0.25), background);
+    background = Color.alphaBlend(
+        foreground.withOpacity(0.25), background.withOpacity(0.25));
     print('isfocused: $background');
   }
   if (control.isHovered) {
     // baseColor = Color.alphaBlend(Colors.black.withOpacity(0.1), baseColor);
-    background = Color.alphaBlend(foreground.withOpacity(0.1), background);
+    background = Color.alphaBlend(
+        foreground.withOpacity(0.1), background.withOpacity(0.1));
     print('ishovered: $background');
   }
   return background;

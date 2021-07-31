@@ -1,5 +1,8 @@
-import 'package:dest/model/response_model.dart';
-import 'package:dest/utils/dio_util.dart';
+import '../model/response_model.dart';
+import '../utils/dio_util.dart';
+import '../utils/constants.dart';
+
+import '../widgets/dropdown.dart';
 // import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:oboe/oboe.dart';
@@ -23,6 +26,10 @@ class ResponseController extends Oboe {
   final client = DioClient();
 
   // Controllers
+
+  // Controller to handle method types
+  DropdownEditingController<String> methodDropDownController =
+      DropdownEditingController(value: HTTP_METHODS[0]);
 
   // Controller to handel url Input
   final urlController = TextEditingController();

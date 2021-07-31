@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:dest/controller/response_controller.dart';
-import 'package:dest/model/response_model.dart';
+import '../controller/response_controller.dart';
+import '../model/response_model.dart';
 import 'package:dio/dio.dart';
 
 class Logging extends Interceptor {

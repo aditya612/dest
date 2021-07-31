@@ -38,17 +38,17 @@
 ///
 /// assert (Meter.HIGH, 100);
 /// assert (Meter.HIGH is Meter);
-abstract class Enum<T> {
-  final T _value;
+// abstract class Enum<T> {
+//   final T _value;
 
-  const Enum(this._value);
+//   const Enum(this._value);
 
-  T get value => _value;
-}
+//   T get value => _value;
+// }
 
-class Method<String> extends Enum<String> {
-  const Method(String value) : super(value);
+// class Method<String> extends Enum<String> {
+//   const Method(String value) : super(value);
 
-  static const Method GET = const Method('GET');
-  static const Method POST = const Method('POST');
-}
+//   static const Method GET = const Method('GET');
+//   static const Method POST = const Method('POST');
+// }

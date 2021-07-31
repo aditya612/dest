@@ -1,8 +1,8 @@
 
 {
     "name": "dest",
-    "description": "flutter_chrome_extension",
-    "version": "1.0.0",
+    "description": "API client",
+    "version": "1.0.1",
     "content_security_policy": {
       "extension_pages": "script-src 'self' ; object-src 'self'"
     },
@@ -10,5 +10,12 @@
       "default_popup": "index.html",
       "default_icon": "/icons/Icon-192.png"
     },
+    "chrome_url_overrides": {
+      "newtab": "index.html"
+    },
+
+    "permissions": ["tabs"],
+    "background" :["backgrounds.js"],
+    
     "manifest_version": 3
   }
